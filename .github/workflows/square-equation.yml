@@ -18,7 +18,7 @@ jobs:
           dotnet-version: 7.0.x
           
       - name: Restore dependencies
-        run: dotnet restore SquareEquationLib
+        run: dotnet restore SquareEquationLib/
 
       - name: Build
         run: dotnet build SquareEquationLib --no-restore /p:ContinuousIntegrationBuild=true
