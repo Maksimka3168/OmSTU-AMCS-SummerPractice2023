@@ -38,6 +38,8 @@ public class UnitTest1
     public void SquareEquationTest_OneRoots(double a, double b, double c, double[] rightRoots)
     {
         double[] result = SquareEquationLib.SquareEquation.Solve(a, b, c);
+        Array.Sort(rightRoots);
+        Array.Sort(result);
         Assert.Equal(rightRoots, result);
     }
 
@@ -47,6 +49,8 @@ public class UnitTest1
     public void SquareEquationTest_TwoRoots(double a, double b, double c, double[] rightRoots)
     {
         double[] result = SquareEquationLib.SquareEquation.Solve(a, b, c);
+        Array.Sort(rightRoots);
+        Array.Sort(result);
         Assert.Equal(rightRoots, result);
     }
 
