@@ -20,7 +20,7 @@ namespace XUnit.Tests
             {
                 result = SquareEquation.Solve(a, b, c);
             }
-            catch (ArgumentException ex){}
+            catch (ArgumentException _){}
         }
         [Then(@"квадратное уравнение имеет два корня \((.*), (.*)\) кратности один")]
         public void TwoRootOneMult(double root1, double root2)
