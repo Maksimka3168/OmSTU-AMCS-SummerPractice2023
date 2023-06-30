@@ -2,7 +2,7 @@ name: square equation test
 
 on:
   push:
-    branches: ["square_equation_custom"]
+    branches: ["square_equation_new_tests"]
 
 jobs:
   build:
