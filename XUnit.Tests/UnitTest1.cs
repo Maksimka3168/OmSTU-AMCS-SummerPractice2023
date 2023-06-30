@@ -16,11 +16,13 @@ namespace XUnit.Tests
         [When(@"вычисляются корни квадратного уравнения")]
         public void SearchRoot()
         {
+            #pragma warning disable CS0168
             try
             {
                 result = SquareEquation.Solve(a, b, c);
             }
             catch (ArgumentException _){}
+            #pragma warning restore CS0168
         }
         [Then(@"квадратное уравнение имеет два корня \((.*), (.*)\) кратности один")]
         public void TwoRootOneMult(double root1, double root2)
