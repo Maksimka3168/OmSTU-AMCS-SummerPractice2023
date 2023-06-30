@@ -25,3 +25,6 @@ jobs:
         
       - name: Unittest and coverage
         run: dotnet test XUnit.Coverlet.MSBuild /p:CollectCoverage=true /p:ThresholdType=line /p:Threshold=100
+
+      - name: Behavior Driven Development
+        run: dotnet test XUnit.Tests /p:CollectCoverage=true /p:CoverletOutputFormat=cobertura

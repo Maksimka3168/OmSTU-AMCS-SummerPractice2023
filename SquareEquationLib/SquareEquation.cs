@@ -1,4 +1,4 @@
-﻿namespace SquareEquationLib;
+﻿﻿namespace SquareEquationLib;
 
 public class SquareEquation
 {
@@ -19,9 +19,19 @@ public class SquareEquation
             return new double[] {(-b) / 2*a};
         }
         else{
-            double x1 = -(b + Math.Sign(b) * Math.Sqrt(D)) / 2;
-            double x2 = c / x1;
+            double x1;
+            double x2;
+            if (c <= e)
+            {
+                x1 = Math.Pow(Math.Abs(c),0.5);
+                x2 = -Math.Pow(Math.Abs(c),0.5);
+            }
+            else {
+                x1 = (-b + Math.Sign(b) * Math.Sqrt(D)) / 2;
+                x2 = c / x1;
+            }
             return new double[] {x1, x2};
+            
         }
     }
 }
