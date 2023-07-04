@@ -2,7 +2,7 @@ name: TestSpaceBattleUpdate
 
 on:
   push:
-    branches: ["straight_line_movement_update"]
+    branches: ["straight_line_movemenent_update"]
 
 jobs:
   build:
