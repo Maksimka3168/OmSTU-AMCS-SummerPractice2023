@@ -1,8 +1,8 @@
-name: TestSpaceBattle
+name: TestSpaceBattleUpdate
 
 on:
   push:
-    branches: ["straight_line_movement"]
+    branches: ["straight_line_movemenent_update"]
 
 jobs:
   build:

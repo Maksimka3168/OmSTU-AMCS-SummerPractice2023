@@ -32,13 +32,11 @@ namespace XUnit.Tests
 
 
         [Given(@"космический корабль, положение в пространстве которого невозможно определить")]
-        public void SpacecraftSetLocationNull()
-        {}
+        public void SpacecraftSetLocationNull(){}
 
 
         [Given(@"скорость корабля определить невозможно")]
-        public void SpacecraftSetSpeedNull()
-        {}
+        public void SpacecraftSetSpeedNull(){}
 
 
         [Given(@"изменить положение в пространстве космического корабля невозможно")]
@@ -47,6 +45,38 @@ namespace XUnit.Tests
             spaceship.setChange(false);
         }
 
+        [Given(@"космический корабль имеет топливо в объеме (.*) ед")]
+        public void SetFuel(int fuel){
+            this.spaceship.setFuel(fuel);
+            this.spaceship.setPosition(0, 0);
+            this.spaceship.setBoostSpeed(0, 0);
+        }
+
+        [Given(@"имеет скорость расхода топлива при движении (.*) ед")]
+        public void SetFuelUse(int fuelUse){
+            this.spaceship.setFuelUse(fuelUse);
+        }
+
+        [Given(@"космический корабль имеет угол наклона (.*) град к оси OX")]
+        public void SetAngleSlope(int angle){
+            this.spaceship.setAngleSlope(angle);
+        }
+
+        [Given(@"имеет мгновенную угловую скорость (.*) град")]
+        public void SetAngleSpeed(int angleSpeed){
+            this.spaceship.setAngleSpeed(angleSpeed);
+        }
+
+        [Given("космический корабль, угол наклона которого невозможно определить")]
+        public void SetAngleSlopeNull(){}
+
+        [Given("мгновенную угловую скорость невозможно определить")]
+        public void SetAngleSpeedNull(){}
+
+        [Given("невозможно изменить уголд наклона к оси OX космического корабля")]
+        public void SetChangeAngleFalse(){
+            this.spaceship.setChangeAngle(false);
+        }
 
         [When(@"происходит прямолинейное равномерное движение без деформации")]
         public void SpacecraftMove()
@@ -56,6 +86,26 @@ namespace XUnit.Tests
             } catch(Exception e) {
                 this.exception = e;
             }
+        }
+
+        [When("происходит вращение вокруг собственной оси")]
+        public void SpacecraftRotate()
+        {
+            try{
+                spaceship.Rotate();
+            } catch(Exception e) {
+                this.exception = e;
+            }
+        }
+
+        [Then(@"новый объем топлива космического корабля равен (.*) ед")]
+        public void SpacecraftFuelResult(int fuelCorrect){
+            this.spaceship.getFuel().Should().Be(fuelCorrect);
+        }
+
+        [Then(@"угол наклона космического корабля к оси OX составляет (.*) град")]
+        public void SpacecraftRotatedAngle(int angleCorrect){
+            this.spaceship.getAngleSlope().Should().Be(angleCorrect);
         }
 
         [Then(@"космический корабль перемещается в точку пространства с координатами \((.*), (.*)\)")]
