@@ -17,10 +17,10 @@ jobs:
           dotnet-version: 7.0.x
 
       - name: Restore dependencies
-        run: dotnet restore Spacetest.sln
+        run: dotnet restore spacebattle
 
       - name: Build
-        run: dotnet build Spacetest.sln --no-restore /p:ContinuousIntegrationBuild=true
+        run: dotnet build spacebattle --no-restore /p:ContinuousIntegrationBuild=true
 
       - name: Behavior Driven Development
         run: cd XUnit.Tests && dotnet test /p:CollectCoverage=true /p:CoverletOutputFormat=cobertura
