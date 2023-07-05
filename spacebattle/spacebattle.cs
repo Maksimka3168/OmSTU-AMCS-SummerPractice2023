@@ -1,8 +1,8 @@
 ﻿namespace spacebattle;
 public class Spaceship
 {
-    private double[]? position;
-    private double[]? boostspeed;
+    private double[] position = new double[] { 0, 0 };
+    private double[]? boostspeed = new double[] { 1, 1 };
     private bool canChange = true;
 
     public Spaceship(){}
